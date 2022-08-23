@@ -6,25 +6,23 @@ function App() {
   const dispatch = useDispatch();
   const { incremented, decremented } = counterSlice.actions;
 
+  //dispatch an action increment to the store
+  const handleIncrement = () => {
+    dispatch(incremented());
+  }
+
+  //dispatch an action decrement to the store
+  const handleDecrement = () => {
+    dispatch(decremented());
+  }
+
   return (
     <div>
       <div>
         <label>Number: {num}</label>
       </div>
-      <button
-        onClick={() => {
-          dispatch(incremented());
-        }}
-      >
-        dispatch +
-      </button>
-      <button
-        onClick={() => {
-          dispatch(decremented());
-        }}
-      >
-        dispatch -
-      </button>
+      <button onClick={handleIncrement}>dispatch +</button>
+      <button onClick={handleDecrement}>dispatch -</button>
     </div>
   );
 }
