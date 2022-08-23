@@ -4,7 +4,7 @@ import counterSlice from "./reducer";
 function App() {
   const num = useSelector((state) => state.value);
   const dispatch = useDispatch();
-  const { incremented, decremented } = counterSlice;
+  const { incremented, decremented } = counterSlice.actions;
 
   return (
     <div>
